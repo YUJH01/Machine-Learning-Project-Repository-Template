@@ -1,0 +1,25 @@
+# Experiment configuration for training and evaluation
+
+models:
+  - name: my_method
+    params:
+      learning_rate: 0.001
+      epochs: 100
+      batch_size: 32
+  - name: baseline_a
+    params:
+      learning_rate: 0.001
+      epochs: 100
+      batch_size: 32
+
+dataset:
+  path: "datasets/data.csv"     # Path to the dataset file
+  split: [0.7, 0.15, 0.15]       # Train, validation, test split proportions
+
+training:
+  optimizer: "adam"
+  loss_function: "cross_entropy"
+  metrics: ["accuracy", "f1_score"]
+
+evaluation:
+  report_path: "results/evaluation_report.json"  # Where to save the detailed evaluation metrics
